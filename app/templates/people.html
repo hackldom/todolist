@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <h1>Here is a list of your friends:</h1>
+                <ul>
+                {% for f in people %}
+                    <li>{{ f }}</li>
+                {% endfor %}
+                </ul>
+                
+        </div>
+    </body>
+</html>
