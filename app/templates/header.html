@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        {% extends "index.html" %}
+        {% block content %}
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a classf="navbar-brand" href="#">To-Do List</a>
+                    </div>
+                    <h1>HIHISDHFSIDFH</h1>
+                    <ul class="nav navbar-nav">
+                        {% for e in tabs %}
+                        <li class="active"><a href="#">{{ e }}</a></li>
+                        {% endfor %}
+                    
+                    </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        {% endblock %}
+        
+    </body>
+</html>

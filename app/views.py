@@ -8,11 +8,10 @@ def index():
             'nationality': 'Hungarian'}
 
     menu = ["Add Element", "View All Entries", "View Uncompleted Entries", "View Completed Entries"]
-
           
 
     return render_template('index.html',
-                            title='Simple template example',
+                            title='To do list',
                             user=user,
                             menu=menu)
 
@@ -23,3 +22,11 @@ def people():
     people = ["Adam", "Kieran", "John", "Mike"]
     return render_template('people.html',
                             people=people)
+
+                            
+@app.route('/header')
+def header():
+    tabs = ["Add Element", "View All Entries", "View Uncompleted Entries", "View Completed Entries"]
+    return render_template('header.html',
+                            tabs=tabs)
+                           
