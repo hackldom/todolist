@@ -1,4 +1,4 @@
-#!/home/domhackl/uni/webdev/project1/planner/flask/bin/python
+#!/Users/belahorvath/Documents/DomsFiles/webapp/todolist/flask/bin/python
 
 import sys
 import getopt

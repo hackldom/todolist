@@ -1,4 +1,4 @@
-#!/home/domhackl/uni/webdev/project1/planner/flask/bin/python2
+#!/Users/belahorvath/Documents/DomsFiles/webapp/todolist/flask/bin/python
 
 # -*- coding: utf-8 -*-
 import re
