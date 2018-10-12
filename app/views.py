@@ -26,7 +26,12 @@ def people():
                             
 @app.route('/header')
 def header():
+    user = {'name': 'Dom Hackl',
+            'age': 20,
+            'nationality': 'Hungarian'}
     tabs = ["Add Element", "View All Entries", "View Uncompleted Entries", "View Completed Entries"]
     return render_template('header.html',
-                            tabs=tabs)
+                          title='View Lists',
+                          user=user,
+                          tabs=tabs)
                            
