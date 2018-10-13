@@ -35,3 +35,8 @@ def header():
                           user=user,
                           tabs=tabs)
                            
+@app.route('/addToDo')
+def addToDo():
+        user = {'name': 'Dom Hackl'}
+        return render_template('addToDo.html',
+                        user=user)
