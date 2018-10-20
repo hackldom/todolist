@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>No title defined</title>
+        {% endif %}
+        
+       {% include 'includes.html' %}
+</head>
+<body>
+    <h2>The form has now been submitted to this page, that's why you are here!</h2>
+</body>
+</html>

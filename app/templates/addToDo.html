@@ -1,9 +1,29 @@
         {% extends 'index.html' %}
         {% block addForm %}
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">To-Do List</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        {% for e in tabs %}
+                        <li class="active"><a href="addToDo.html">{{ e }}</a></li>
+                        {% endfor %}
+                    
+                    </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
         <div id="main">
-            <form action="/submitted" method="POST">
+            <form action="" method="POST", name="addnote">
+                {{ form.hideen_tag() }}
                 <h1>Add New Notes:</h1><br>
-                <div class="form-group">
+                <div><p>{{ add.title }}</p></div>
+                <div><p>{{ add.desc }}</p></div>
+                <!--div class="form-group">
                     <label for="noteTitle">Note Title:</label>
                     <input type="text" class="form-control" id="noteTitle" placeholder="Title">
                 </div>
@@ -15,7 +35,7 @@
                     <label>
                     <input type="checkbox"> Check me out
                     </label>
-                </div>
+                </div-->
                 <button type="submit" class="btn btn-success">Post</button>
             </form>
         </div>

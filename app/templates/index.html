@@ -6,21 +6,16 @@
         {% else %}
         <title>No title defined</title>
         {% endif %}
-         <!-- BOOTSTRAP-->
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <!--CSS-->
-        <link type="text/css" href="../static/style/main.css" rel="stylesheet">
-       
+        
+       {% include 'includes.html' %}
     </head>
     <body>
       
 
         <div class="container">
-            <div id="nav">
-            {% block navbar %}{% endblock %}
-            </div>
+         
             {% block addForm %}{% endblock %}
+            {% include 'base.html' %}
             <!--div id="main">
                     <form>
                         
