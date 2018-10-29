@@ -1,6 +1,10 @@
-from flask import render_template, flash
+from flask import render_template, request
 from app import app
-from .forms import PostData
+#from .forms import PostData
+from form import AddNoteForm
+
+
+app.secret_key = 'Development Key'
 
 @app.route('/')
 def index():
@@ -36,21 +40,25 @@ def header():
                                 user=user,
                                 tabs=tabs)
                            
-@app.route('/addToDo', methods=['GET', 'POST'])
+@app.route('/submitted', methods=['GET','POST'])
 def addToDo():
         user = {'name': 'Dom Hackl'}
         tabs = ["Add Element", "View All Entries", "View Uncompleted Entries", "View Completed Entries"]
-        form = PostData()
-        if form.validate_on_submit():
-                flash('Successfully received form data. The title is %s and the description is %s = %s'%(form.title.data, form.desc.data))
-        return render_template('addToDo.html',
+        #form = PostData()
+        #if form.validate_on_submit():
+         #       flash('Successfully received form data. The title is %s and the description is %s = %s'%(form.title.data, form.desc.data))
+        #if request.method == 'POST':
+         #       title = request.form['noteTitle']
+          #      desc = request.form['noteDetail']
+        form = AddNoteForm()
+        if request.method == 'POST':
+                return "success"
+        elif request.method == 'GET':
+                return render_template('submitted.html',
                         user=user,
+                        tabs=tabs,
                         title='Add a New Note',
-                        tabs=tabs)
+                        form=form)
 
-@app.route('/submitted', methods=['POST', 'GET'])
-def submitted():
-        user = {'name': 'Dom Hackl'}
-        render_template('submitted.html',
-                title='New Form Submitted',
-                        user=user)
+       
+

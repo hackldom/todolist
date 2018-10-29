@@ -1,15 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    {% if title %}
-        <title>{{ title }}</title>
-        {% else %}
-        <title>No title defined</title>
-        {% endif %}
-        
-       {% include 'includes.html' %}
-</head>
-<body>
-    <h2>The form has now been submitted to this page, that's why you are here!</h2>
-</body>
-</html>
+{% include 'includes.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="section_content">
+        <h2>Note Title</h2>
+
+        <form method="POST" action="/submitted">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.title.label }}
+                {{ form.title }}
+            </div>
+
+            <div class="form-group">
+                {{ form.description.label }}
+                {{ form.description }}
+            </div>
+
+            {{ form.submit(class="btn-primary") }}
+                        
+        </form>
+    </div>
+</div>
+{% endblock %}
