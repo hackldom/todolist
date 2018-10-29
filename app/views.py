@@ -3,7 +3,7 @@ from app import app
 #from .forms import PostData
 from form import AddNoteForm
 
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/planner'
 app.secret_key = 'Development Key'
 
 @app.route('/')
@@ -52,7 +52,10 @@ def addToDo():
           #      desc = request.form['noteDetail']
         form = AddNoteForm()
         if request.method == 'POST':
-                return "success"
+                if form.validate() == False:
+                        render_template('submitted.html', form=form)
+                else:
+                        return "success"
         elif request.method == 'GET':
                 return render_template('submitted.html',
                         user=user,

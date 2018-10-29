@@ -7,17 +7,37 @@
 
         <form method="POST" action="/submitted">
             {{ form.hidden_tag() }}
-
+            
             <div class="form-group">
-                {{ form.title.label }}
+                {{  form.title.label }}
+            <br>
+                {% if form.title.errors %}
+                    {% for error in form.title.errors %}
+                        <p>{{Error}}</p>
+                    {% endfor %}
+                {% endif %}
+
                 {{ form.title }}
             </div>
 
             <div class="form-group">
                 {{ form.description.label }}
+            <br>
+                {% if form.description.errors %}
+                    {% for error in form.description.errors %}
+                        <p>{{Error}}</p>
+                    {% endfor %}
+                {% endif %}
+
                 {{ form.description }}
             </div>
 
+            <!--div class="form-group">
+                {{ form.ready.label}}
+                {{ form.ready }}    
+            </div -->
+
+            
             {{ form.submit(class="btn-primary") }}
                         
         </form>
